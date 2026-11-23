@@ -1,135 +1,127 @@
 {
-    "version":  5,
-    "step":  "discovery",
-    "owner":  "active-orchestrator",
-    "foundation":  {
-                       "version":  1,
-                       "order":  [
-                                     "discovery",
-                                     "kb",
-                                     "roadmap",
-                                     "find-skill",
-                                     "registry",
-                                     "agents"
-                                 ],
-                       "phases":  {
-                                      "discovery":  {
-                                                        "variant":  "interview+competitors",
-                                                        "status":  "completed",
-                                                        "requires":  [
-
-                                                                     ],
-                                                        "outputs":  [
-                                                                        "discovery/discovery.md"
-                                                                    ]
-                                                    },
-                                      "kb":  {
-                                                 "variant":  "import",
-                                                 "status":  "pending",
-                                                 "requires":  [
-                                                                  "discovery"
-                                                              ],
-                                                 "outputs":  [
-                                                                 "knowledge-base/"
-                                                             ]
-                                             },
-                                      "visual-design":  {
-                                                            "variant":  "off",
-                                                            "status":  "skipped",
-                                                            "requires":  [
-
-                                                                         ],
-                                                            "outputs":  [
-
-                                                                        ]
-                                                        },
-                                      "roadmap":  {
-                                                      "variant":  "local-markdown",
-                                                      "status":  "pending",
-                                                      "requires":  [
-                                                                       "kb"
-                                                                   ],
-                                                      "outputs":  [
-                                                                      "CHANGES.md"
-                                                                  ]
-                                                  },
-                                      "task-management":  {
-                                                              "variant":  "local",
-                                                              "status":  "pending",
-                                                              "requires":  [
-                                                                               "roadmap"
-                                                                           ],
-                                                              "outputs":  [
-                                                                              ".active-stack/roadmap.json"
-                                                                          ]
-                                                          },
-                                      "find-skill":  {
-                                                         "variant":  "recommend",
-                                                         "status":  "pending",
-                                                         "requires":  [
-                                                                          "kb"
-                                                                      ],
-                                                         "outputs":  [
-
-                                                                     ]
-                                                     },
-                                      "registry":  {
-                                                       "variant":  "index",
-                                                       "status":  "pending",
-                                                       "requires":  [
-                                                                        "find-skill"
-                                                                    ],
-                                                       "outputs":  [
-                                                                       ".atl/skill-registry.md"
-                                                                   ]
-                                                   },
-                                      "agents":  {
-                                                     "variant":  "generate",
-                                                     "status":  "pending",
-                                                     "requires":  [
-                                                                      "kb",
-                                                                      "roadmap"
-                                                                  ],
-                                                     "outputs":  [
-                                                                     "AGENTS.md"
-                                                                 ]
-                                                 }
-                                  }
-                   },
-    "discovery":  {
-                      "problema":  "Consultorios y clínicas odontológicas argentinas operan con procesos fragmentados (agenda en papel/Excel, recordatorios manuales, cobros dispersos, HC en papel), generando ausencias y pérdida de pacientes.",
-                      "usuarios":  "Odontólogos, recepcionistas/asistentes, administradores/dueños, pacientes, laboratorios (opcional).",
-                      "casosDeUso":  [
-                                         "Reserva de turno online 24/7",
-                                         "Agenda multi-profesional con estados",
-                                         "Recordatorios automáticos WA/email",
-                                         "Seña online Mercado Pago",
-                                         "HC + odontograma FDI versionado",
-                                         "Presupuestos y cobros, caja diaria",
-                                         "Facturación electrónica ARCA",
-                                         "Portal del paciente sin contraseña"
-                                     ],
-                      "competidoresClave":  [
-                                                "DentalSoft",
-                                                "Dentidad",
-                                                "Bilog",
-                                                "Denteo",
-                                                "FLAP",
-                                                "ClínIA",
-                                                "AgendaPro",
-                                                "Dentalink"
-                                            ],
-                      "riesgos":  [
-                                      "Competidores locales consolidados (Bilog +1.500 clínicas)",
-                                      "Dependencia WhatsApp Business API y costos por mensaje",
-                                      "Adopción por profesionales habituados a software instalado",
-                                      "Cambios regulatorios ARCA/Ley 25.326"
-                                  ],
-                      "preguntasAbiertas":  [
-                                                "¿Módulo laboratorio en MVP?",
-                                                "¿Cobertura OS en MVP?",
-                                                "¿Pricing por institución o por usuario?",
-                                                "¿Teleconsulta en MVP?"
-                                            ]
-                  }
+  "version": 5,
+  "step": "kb",
+  "owner": "active-orchestrator",
+  "foundation": {
+    "version": 1,
+    "order": [
+      "discovery",
+      "kb",
+      "roadmap",
+      "find-skill",
+      "registry",
+      "agents"
+    ],
+    "phases": {
+      "discovery": {
+        "variant": "interview+competitors",
+        "status": "completed",
+        "requires": [],
+        "outputs": [
+          "discovery/discovery.md"
+        ]
+      },
+      "kb": {
+        "variant": "import",
+        "status": "completed",
+        "requires": [
+          "discovery"
+        ],
+        "outputs": [
+          "knowledge-base/"
+        ]
+      },
+      "visual-design": {
+        "variant": "off",
+        "status": "skipped",
+        "requires": [],
+        "outputs": []
+      },
+      "roadmap": {
+        "variant": "local-markdown",
+        "status": "pending",
+        "requires": [
+          "kb"
+        ],
+        "outputs": [
+          "CHANGES.md"
+        ]
+      },
+      "task-management": {
+        "variant": "local",
+        "status": "pending",
+        "requires": [
+          "roadmap"
+        ],
+        "outputs": [
+          ".active-stack/roadmap.json"
+        ]
+      },
+      "find-skill": {
+        "variant": "recommend",
+        "status": "pending",
+        "requires": [
+          "kb"
+        ],
+        "outputs": []
+      },
+      "registry": {
+        "variant": "index",
+        "status": "pending",
+        "requires": [
+          "find-skill"
+        ],
+        "outputs": [
+          ".atl/skill-registry.md"
+        ]
+      },
+      "agents": {
+        "variant": "generate",
+        "status": "pending",
+        "requires": [
+          "kb",
+          "roadmap"
+        ],
+        "outputs": [
+          "AGENTS.md"
+        ]
+      }
+    }
+  },
+  "discovery": {
+    "problema": "Consultorios y clÃ­nicas odontolÃ³gicas argentinas operan con procesos fragmentados (agenda en papel/Excel, recordatorios manuales, cobros dispersos, HC en papel), generando ausencias y pÃ©rdida de pacientes.",
+    "usuarios": "OdontÃ³logos, recepcionistas/asistentes, administradores/dueÃ±os, pacientes, laboratorios (opcional).",
+    "casosDeUso": [
+      "Reserva de turno online 24/7",
+      "Agenda multi-profesional con estados",
+      "Recordatorios automÃ¡ticos WA/email",
+      "SeÃ±a online Mercado Pago",
+      "HC + odontograma FDI versionado",
+      "Presupuestos y cobros, caja diaria",
+      "FacturaciÃ³n electrÃ³nica ARCA",
+      "Portal del paciente sin contraseÃ±a"
+    ],
+    "competidoresClave": [
+      "DentalSoft",
+      "Dentidad",
+      "Bilog",
+      "Denteo",
+      "FLAP",
+      "ClÃ­nIA",
+      "AgendaPro",
+      "Dentalink"
+    ],
+    "riesgos": [
+      "Competidores locales consolidados (Bilog +1.500 clÃ­nicas)",
+      "Dependencia WhatsApp Business API y costos por mensaje",
+      "AdopciÃ³n por profesionales habituados a software instalado",
+      "Cambios regulatorios ARCA/Ley 25.326"
+    ],
+    "preguntasAbiertas": [
+      "Â¿MÃ³dulo laboratorio en MVP?",
+      "Â¿Cobertura OS en MVP?",
+      "Â¿Pricing por instituciÃ³n o por usuario?",
+      "Â¿Teleconsulta en MVP?"
+    ]
+  }
 }
