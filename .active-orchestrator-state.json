@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "step": "roadmap",
+  "step": "agents",
   "owner": "active-orchestrator",
   "foundation": {
     "version": 1,
@@ -59,7 +59,7 @@
       },
       "find-skill": {
         "variant": "recommend",
-        "status": "pending",
+        "status": "completed",
         "requires": [
           "kb"
         ],
@@ -67,7 +67,7 @@
       },
       "registry": {
         "variant": "index",
-        "status": "pending",
+        "status": "completed",
         "requires": [
           "find-skill"
         ],
@@ -77,7 +77,7 @@
       },
       "agents": {
         "variant": "generate",
-        "status": "pending",
+        "status": "completed",
         "requires": [
           "kb",
           "roadmap"
