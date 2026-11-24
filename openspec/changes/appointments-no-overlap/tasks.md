@@ -8,15 +8,17 @@
 
 ## 2. Creacion de Turno y Calculo de Duracion (TDD)
 
-- [ ] 2.1 Escribir test (RED) y luego implementar (GREEN) en `src/domain/appointment-service.ts` el Escenario 1 (creación feliz calculando `ends_at = starts_at + service.duration_minutes`), verificando que `npm test` pase en verde para dicho escenario.
+- [ ] 2.1 Escribir test (RED) y luego implementar (GREEN) en `src/domain/appointment-service.ts` el Escenario 1 (`CA-1`, `RN-AG-04` — creación feliz calculando `ends_at = starts_at + service.duration_minutes`), verificando que `npm test` pase en verde para dicho escenario.
 
-## 3. Prevencion de Solapamientos y Casos de Borde (TDD)
+## 3. Prevencion de Solapamientos, Casos de Borde y Multi-tenancy (TDD)
 
-- [ ] 3.1 Escribir test (RED) y luego implementar (GREEN) la validación de no solapamiento por profesional (`RN-AG-01` — Escenario 2: rechazo con código `PROFESSIONAL_OVERLAP` incluso en otro sillón/box), verificando que `npm test` pase en verde.
-- [ ] 3.2 Escribir test (RED) y luego implementar (GREEN) la validación de no solapamiento por sillón/box (`RN-AG-02` — Escenario 3: rechazo con código `CHAIR_OVERLAP` incluso con otro profesional), verificando que `npm test` pase en verde.
-- [ ] 3.3 Escribir test (RED) y verificar/ajustar (GREEN) el soporte de turnos estrictamente contiguos (`RN-AG-03` — Escenario 4: `existente.ends_at == nuevo.starts_at` permitido para mismo profesional y mismo sillón/box), verificando que `npm test` pase en verde.
+- [ ] 3.1 Escribir test (RED) y luego implementar (GREEN) la validación de no solapamiento por profesional (`CA-2`, `RN-AG-01` — Escenario 2: rechazo con código `PROFESSIONAL_OVERLAP` incluso en otro sillón/box), verificando que `npm test` pase en verde.
+- [ ] 3.2 Escribir test (RED) y luego implementar (GREEN) la validación de no solapamiento por sillón/box (`CA-3`, `RN-AG-02` — Escenario 3: rechazo con código `CHAIR_OVERLAP` incluso con otro profesional), verificando que `npm test` pase en verde.
+- [ ] 3.3 Escribir test (RED) y verificar/ajustar (GREEN) el soporte de turnos estrictamente contiguos (`CA-4`, `RN-AG-03` — Escenario 4: `existente.ends_at == nuevo.starts_at` permitido para mismo profesional y mismo sillón/box), verificando que `npm test` pase en verde.
+- [ ] 3.4 Escribir test (RED) y luego implementar (GREEN) la liberación de bloque horario ante turnos en estado `cancelled` o `no_show` (`CA-5`, `RN-AG-05` — Escenario 5: permitir agendar nuevo turno ignorando turnos inactivos), verificando que `npm test` pase en verde.
+- [ ] 3.5 Escribir test (RED) y luego implementar (GREEN) la validación de aislamiento multi-tenant por `clinic_id` (`CA-6`, `RN-AU-01` — Escenario 6: rechazo con código `TENANT_MISMATCH` cuando un recurso pertenece a otra clínica), verificando que `npm test` pase en verde.
 
 ## Workflow follow-up
 
-- Ejecutar suite completa de tests (`npm test`) en la fase Verify confirmando 100% de escenarios en verde.
+- Ejecutar suite completa de tests (`npm test`) en la fase Verify confirmando 100% de escenarios (`CA-1` a `CA-6`) en verde.
 - Sincronizar `specs/appointments/spec.md` hacia `openspec/specs/appointments/spec.md` y archivar el change una vez aprobada la verificación.
