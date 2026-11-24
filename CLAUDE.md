@@ -7,16 +7,16 @@
 
 ## Stack Tecnológico
 
-> El proyecto permanece **agnóstico al stack** hasta que el equipo resuelva la selección técnica en `knowledge-base/10_preguntas_abiertas.md`. Entorno base preparado en Etapa 0: Go, Node.js y Git.
+> Stack técnico confirmado por el equipo al cierre de las preguntas abiertas de prioridad Alta en `knowledge-base/10_preguntas_abiertas.md`.
 
 | Capa | Tecnologías | Versión mínima / Estado |
 |------|-------------|-------------------------|
 | **Modalidad y plataforma** | Cloud SaaS multi-tenant, aplicación web responsive multi-dispositivo | Definido en Discovery |
-| **Backend / API** | Por definir (no especificado en Discovery; entorno base con Go y Node.js disponibles) | Pendiente de decisión técnica |
-| **Frontend Web** | Por definir (no especificado en Discovery; entorno base con Node.js disponible) | Pendiente de decisión técnica |
-| **Base de datos** | Por definir (requiere soporte transaccional ACID para prevención estricta de solapamientos) | Pendiente de decisión técnica |
-| **Cola / Scheduler** | Por definir (para programación y envío idempotente de recordatorios) | Pendiente de decisión técnica |
-| **Testing** | Tests automatizados cubriendo escenarios Dado/Cuando/Entonces y health checks | Requerido por Etapa 6 OPSX |
+| **Backend / API y Dominio** | TypeScript sobre Node.js (arquitectura modular / puertos y adaptadores) | Node.js 20+ / TypeScript 5+ (Confirmado) |
+| **Frontend Web** | React + TypeScript | Confirmado |
+| **Base de datos** | MySQL 8 (soporte transaccional ACID; desacoplado vía patrón Repository en dominio) | MySQL 8.x (Confirmado) |
+| **Cola / Scheduler** | Workers sobre Node.js / MySQL job table para recordatorios idempotentes | Confirmado para `C-08` |
+| **Testing** | Vitest (`npm test`) cubriendo escenarios Dado/Cuando/Entonces y health checks | Vitest (Confirmado para Etapa 6 OPSX) |
 | **Integraciones v1.0** | WhatsApp Business API (plantillas Meta aprobadas), Email transaccional | MVP núcleo |
 | **Integraciones v1.1** | Mercado Pago (señas), ARCA (facturación CAE), Google Calendar | Post-MVP núcleo |
 
