@@ -33,14 +33,14 @@
 
 ## Preguntas abiertas (priorizadas)
 
-| Prioridad | Pregunta | Bloquea | Decisor |
-|---|---|---|---|
-| **Alta** | ¿Cuál será el stack tecnológico oficial del proyecto (lenguaje backend, framework frontend, motor de base de datos y runner de tests)? | Etapa 4 (`CHANGES.md`), Etapa 5 (`AGENTS.md` / `find-skill`) y Etapa 6 (OPSX) | Equipo (A+B+C) |
-| **Alta** | ¿Se confirma la división **v1.0 (4 pilares de `COORDINACION-EQUIPO.md`)** vs **v1.1 (otros 4 imprescindibles del Discovery)** para el roadmap? | Etapa 4 (`CHANGES.md`) | Equipo (A+B+C) |
-| **Alta** | Reglas de borde de agenda para el primer change OPSX: ¿el consultorio puede habilitar sobreagendamiento excepcional (por recepción, nunca online)? ¿Existe algún tipo de turno que no ocupe sillón/box? ¿Cuál es la anticipación mínima para reservar/cancelar online? | Etapa 6 (`Explore` / `Propose`) | Integrante C + Equipo |
-| **Media** | Política de recordatorios WhatsApp: ¿cuántas ventanas previas (ej. 24h y 2h antes) se enviarán por defecto y cuál es el tope de gasto por plantillas Meta? | Épica 4 (Recordatorios) | Product Owner / Equipo |
-| **Media** | ¿Cómo se concilia un paciente que reserva online 24/7 si ya existía en la clínica (por DNI, teléfono WhatsApp o email)? | Épica 1 y Épica 3 | Equipo técnico |
-| **Media** | ¿El modelo de pricing en ARS será por institución (como ClínIA) o por profesional/agenda (como Dentidad/DrApp)? | Módulo comercial / planes SaaS | Equipo (A+B+C) |
-| **Baja** | ¿Cuáles son los umbrales numéricos objetivo para las métricas de éxito (ej. % reducción de no-show, % adopción online)? | Métricas de producto | Equipo (A+B+C) |
-| **Baja** | Confirmación final post-MVP de: módulo de laboratorio dental, cobertura de obras sociales (PUCO) y teleconsulta (preguntas heredadas de `discovery.md` §3). | Roadmap v2+ | Equipo (A+B+C) |
+| Prioridad | Pregunta | Bloquea | Decisor | Estado / Resolución |
+|---|---|---|---|---|
+| **Alta** | ¿Cuál será el stack tecnológico oficial del proyecto (lenguaje backend, framework frontend, motor de base de datos y runner de tests)? | Etapa 4 (`CHANGES.md`), Etapa 5 (`AGENTS.md` / `find-skill`) y Etapa 6 (OPSX) | Equipo (A+B+C) | ✅ **Resuelta (Pre-Etapa 6):** Backend y dominio en **TypeScript sobre Node.js**, Frontend en **React + TypeScript**, Base de datos relacional **MySQL 8** (desacoplada mediante patrón Repository) y Runner de tests **Vitest** (`npm test`). |
+| **Alta** | ¿Se confirma la división **v1.0 (4 pilares de `COORDINACION-EQUIPO.md`)** vs **v1.1 (otros 4 imprescindibles del Discovery)** para el roadmap? | Etapa 4 (`CHANGES.md`) | Equipo (A+B+C) | ✅ **Resuelta (Etapa 4):** Confirmada en `CHANGES.md` (`C-01`..`C-10` en MVP v1.0; `C-11`..`C-14` en v1.1). |
+| **Alta** | Reglas de borde de agenda para el primer change OPSX: ¿el consultorio puede habilitar sobreagendamiento excepcional (por recepción, nunca online)? ¿Existe algún tipo de turno que no ocupe sillón/box? ¿Cuál es la anticipación mínima para reservar/cancelar online? | Etapa 6 (`Explore` / `Propose`) | Integrante C + Equipo | ✅ **Resuelta (Etapa 6):** En v1.0 rige prevención estricta de solapamientos sin sobreturnos (`RN-AG-01`, `RN-AG-02`), todo turno asigna 1 profesional y 1 sillón/box (`SU-02`), los intervalos `[starts_at, ends_at)` contiguos (`A.ends_at == B.starts_at`) son válidos (`RN-AG-03`), y los estados `cancelled` / `no_show` liberan inmediatamente ambos recursos (`RN-AG-05`). |
+| **Media** | Política de recordatorios WhatsApp: ¿cuántas ventanas previas (ej. 24h y 2h antes) se enviarán por defecto y cuál es el tope de gasto por plantillas Meta? | Épica 4 (Recordatorios) | Product Owner / Equipo | Pendiente (no bloquea `C-06`) |
+| **Media** | ¿Cómo se concilia un paciente que reserva online 24/7 si ya existía en la clínica (por DNI, teléfono WhatsApp o email)? | Épica 1 y Épica 3 | Equipo técnico | Pendiente (no bloquea `C-06`) |
+| **Media** | ¿El modelo de pricing en ARS será por institución (como ClínIA) o por profesional/agenda (como Dentidad/DrApp)? | Módulo comercial / planes SaaS | Equipo (A+B+C) | Pendiente (no bloquea `C-06`) |
+| **Baja** | ¿Cuáles son los umbrales numéricos objetivo para las métricas de éxito (ej. % reducción de no-show, % adopción online)? | Métricas de producto | Equipo (A+B+C) | Pendiente (no bloquea `C-06`) |
+| **Baja** | Confirmación final post-MVP de: módulo de laboratorio dental, cobertura de obras sociales (PUCO) y teleconsulta (preguntas heredadas de `discovery.md` §3). | Roadmap v2+ | Equipo (A+B+C) | Pendiente (no bloquea `C-06`) |
 

@@ -203,7 +203,7 @@ Paso │ Agente A (Backend Core)      │ Agente B (Backend Aux)        │ Agen
 ### [C-06] `appointments-no-overlap`
 > *Change acotado recomendado en `COORDINACION-EQUIPO.md` para ejecutar el ciclo completo OPSX de Etapa 6.*
 
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[x]` completado (archivado en `openspec/changes/archive/`)
 - **Scope**: Motor transaccional de agenda multi-profesional y multi-sillón/box con prevención estricta de solapamientos (`US-004`, `US-005`)
   - Modelo: `Appointment` (`clinic_id`, `patient_id`, `professional_id`, `chair_id`, `service_id`, `starts_at`, `ends_at`, `duration_minutes`, `status`, `source`, `public_action_token`, `cancellation_reason`)
   - Lógica pura de dominio + transacción atómica: cálculo `ends_at = starts_at + service.duration_minutes`, validación de horario laboral (`AvailabilityRule`), exclusión mutua en intervalos `[starts_at, ends_at)` por `professional_id` (`RN-AG-01`) y por `chair_id` (`RN-AG-02`), validez de turnos contiguos `A.ends_at == B.starts_at` (`RN-AG-03`), bloqueo solo en estados activos (`pending | confirmed | checked_in`) y liberación inmediata en `cancelled | no_show` (`RN-AG-05`)

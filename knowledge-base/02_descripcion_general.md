@@ -2,16 +2,16 @@
 
 ## Stack tecnológico
 
-> **Nota de fidelidad al Discovery:** el informe de Discovery (`docs/discovery/informe-discovery.md`) y la coordinación del equipo (`COORDINACION-EQUIPO.md`) definen el modelo SaaS, el dominio y las integraciones externas, pero **no especifican el lenguaje ni los frameworks de aplicación**. En el entorno preparado en Etapa 0 figuran instalados Go, Node.js y Git; la selección final del stack queda registrada como pendiente en `10_preguntas_abiertas.md`.
+> **Nota de fidelidad al Discovery y resolución Pre-Etapa 6:** el informe de Discovery (`docs/discovery/informe-discovery.md`) definió el modelo Cloud SaaS, el dominio y las integraciones externas; al cierre de las preguntas abiertas de prioridad Alta en `10_preguntas_abiertas.md` (antes de iniciar la Etapa 6 OPSX), el equipo confirmó el stack concreto:
 
 | Capa | Tecnologías | Versión mínima / Estado |
 |---|---|---|
 | **Modalidad y plataforma** | Cloud SaaS multi-tenant, aplicación web responsive multi-dispositivo | Definido en Discovery |
-| **Backend / API** | Por definir (no especificado en Discovery; entorno base con Go y Node.js disponibles) | Pendiente de decisión técnica |
-| **Frontend Web** | Por definir (no especificado en Discovery; entorno base con Node.js disponible) | Pendiente de decisión técnica |
-| **Base de datos** | Por definir (requiere soporte transaccional ACID para prevención estricta de solapamientos) | Pendiente de decisión técnica |
-| **Cola / Scheduler** | Por definir (para programación y envío idempotente de recordatorios) | Pendiente de decisión técnica |
-| **Testing** | Tests automatizados cubriendo escenarios Dado/Cuando/Entonces y health checks | Requerido por Etapa 6 OPSX |
+| **Backend / API y Dominio** | TypeScript sobre Node.js (arquitectura modular / puertos y adaptadores) | Node.js 20+ / TypeScript 5+ (Confirmado) |
+| **Frontend Web** | React + TypeScript | Confirmado |
+| **Base de datos** | MySQL 8 (soporte transaccional ACID; desacoplado vía patrón Repository en dominio) | MySQL 8.x (Confirmado) |
+| **Cola / Scheduler** | Workers sobre Node.js / MySQL job table para recordatorios idempotentes | Confirmado para `C-08` |
+| **Testing** | Vitest (`npm test`) cubriendo escenarios Dado/Cuando/Entonces y health checks | Vitest (Confirmado para Etapa 6 OPSX) |
 
 ---
 
