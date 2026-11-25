@@ -1,5 +1,43 @@
+# Dependencies
 node_modules/
+jspm_packages/
+bower_components/
+
+# Build / Compiled outputs
 dist/
+build/
+out/
 coverage/
+*.tsbuildinfo
+
+# Logs & Runtime data
+logs/
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment & Secrets
 .env
+.env.*
+!.env.example
+
+# IDE & Editor configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
