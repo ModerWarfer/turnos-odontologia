@@ -2,9 +2,9 @@
 
 ## 1. Setup y Contratos de Dominio
 
-- [ ] 1.1 Configurar `package.json`, `tsconfig.json` y `vitest.config.ts` y verificar que `npm test` inicialice Vitest sin errores de configuración.
-- [ ] 1.2 Definir tipos y entidades de dominio (`Clinic`, `Professional`, `Chair`, `Service`, `Patient`, `Appointment`, `AppointmentStatus`) en `src/domain/types.ts` y errores tipados (`DomainError`) en `src/domain/errors.ts`, verificando compilación TypeScript limpia.
-- [ ] 1.3 Definir el puerto `AppointmentRepository` en `src/domain/appointment-repository.ts` y su adaptador en memoria `InMemoryAppointmentRepository` en `src/infrastructure/in-memory-appointment-repository.ts` con seed de datos 100% ficticios (Ley 25.326).
+- [x] 1.1 Configurar `package.json`, `tsconfig.json` y `vitest.config.ts` y verificar que `npm test` inicialice Vitest sin errores de configuración.
+- [x] 1.2 Definir tipos y entidades de dominio (`Clinic`, `Professional`, `Chair`, `Service`, `Patient`, `Appointment`, `AppointmentStatus`) en `src/domain/types.ts` y errores tipados (`DomainError`) en `src/domain/errors.ts`, verificando compilación TypeScript limpia.
+- [x] 1.3 Definir el puerto `AppointmentRepository` en `src/domain/appointment-repository.ts` y su adaptador en memoria `InMemoryAppointmentRepository` en `src/infrastructure/in-memory-appointment-repository.ts` con seed de datos 100% ficticios (Ley 25.326).
 
 ## 2. Creacion de Turno y Calculo de Duracion (TDD)
 
